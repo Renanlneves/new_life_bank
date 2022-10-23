@@ -22,7 +22,7 @@ def root() -> str:
     return "hello World"
 
 @app.get("/health")
-def alive() -> dict[str, datetime]:
+def alive() -> Dict[str, datetime]:
     return {"timestamp": datetime.now()}
 
 @app.post("/accounts", response_model=bool, tags=["accounts"])
@@ -33,7 +33,7 @@ def create_account(account: Account):
     return True
 
 #pegando os dados das contas.
-@app.get("/accounts")
+@app.get("/accounts", tags=["accounts"])
 def get_account() -> list[str, int]:
 
     return accounts
