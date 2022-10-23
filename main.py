@@ -33,8 +33,8 @@ def create_account(account: Account):
     return True
 
 #pegando os dados das contas.
-@app.get("/accounts", tags=["accounts"])
-def get_account() -> list[str, int]:
+@app.get("/accounts", response_model=list ,tags=["accounts"])
+def get_account():
 
     return accounts
 
